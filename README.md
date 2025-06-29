@@ -62,9 +62,9 @@ To restore:
 - C# (.NET Framework)
 - Windows Forms
 - SQL Server
-- ADO.NET
+- ADO.NET - For database access (SQL Server)
 - Layered architecture
-
+  
 ---
 
 ## 🚀 Getting Started
