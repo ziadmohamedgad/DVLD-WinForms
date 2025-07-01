@@ -3,8 +3,15 @@
   "WorkspaceRootPath": "E:\\Learn\\Programming\\Programs\\GitHub Projects\\DVLD-WinForms\\DVLD\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{20DC0548-C637-46AE-B923-ED8B56F612E8}|DVLD-PresentationLayer.csproj|e:\\learn\\programming\\programs\\github projects\\dvld-winforms\\dvld\\people\\frmlistpeople.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{20DC0548-C637-46AE-B923-ED8B56F612E8}|DVLD-PresentationLayer.csproj|solutionrelative:people\\frmlistpeople.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{E36FE165-9D1C-456E-8144-F4D8B4B22DCA}|..\\DVLD-DataLayer\\DVLD-DataLayer.csproj|e:\\learn\\programming\\programs\\github projects\\dvld-winforms\\dvld-datalayer\\clsdataaccesssettings.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{20DC0548-C637-46AE-B923-ED8B56F612E8}|DVLD-PresentationLayer.csproj|e:\\learn\\programming\\programs\\github projects\\dvld-winforms\\dvld\\app.manifest||{FA3CD31E-987B-443A-9B81-186104E8DAC1}",
+      "RelativeMoniker": "D:0:0:{20DC0548-C637-46AE-B923-ED8B56F612E8}|DVLD-PresentationLayer.csproj|solutionrelative:app.manifest||{FA3CD31E-987B-443A-9B81-186104E8DAC1}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{20DC0548-C637-46AE-B923-ED8B56F612E8}|DVLD-PresentationLayer.csproj|e:\\learn\\programming\\programs\\github projects\\dvld-winforms\\dvld\\app.config||{FA3CD31E-987B-443A-9B81-186104E8DAC1}",
+      "RelativeMoniker": "D:0:0:{20DC0548-C637-46AE-B923-ED8B56F612E8}|DVLD-PresentationLayer.csproj|solutionrelative:app.config||{FA3CD31E-987B-443A-9B81-186104E8DAC1}"
     }
   ],
   "DocumentGroupContainers": [
@@ -14,7 +21,7 @@
       "DocumentGroups": [
         {
           "DockedWidth": 62,
-          "SelectedChildIndex": 12,
+          "SelectedChildIndex": 14,
           "Children": [
             {
               "$type": "Bookmark",
@@ -66,15 +73,41 @@
             },
             {
               "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "app.manifest",
+              "DocumentMoniker": "E:\\Learn\\Programming\\Programs\\GitHub Projects\\DVLD-WinForms\\DVLD\\app.manifest",
+              "RelativeDocumentMoniker": "app.manifest",
+              "ToolTip": "E:\\Learn\\Programming\\Programs\\GitHub Projects\\DVLD-WinForms\\DVLD\\app.manifest",
+              "RelativeToolTip": "app.manifest",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001203|",
+              "WhenOpened": "2025-07-01T23:50:44.022Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "App.config",
+              "DocumentMoniker": "E:\\Learn\\Programming\\Programs\\GitHub Projects\\DVLD-WinForms\\DVLD\\App.config",
+              "RelativeDocumentMoniker": "App.config",
+              "ToolTip": "E:\\Learn\\Programming\\Programs\\GitHub Projects\\DVLD-WinForms\\DVLD\\App.config",
+              "RelativeToolTip": "App.config",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAYAAAAnAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000601|",
+              "WhenOpened": "2025-07-01T23:48:05.308Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
               "DocumentIndex": 0,
-              "Title": "frmListPeople.cs",
-              "DocumentMoniker": "E:\\Learn\\Programming\\Programs\\GitHub Projects\\DVLD-WinForms\\DVLD\\People\\frmListPeople.cs",
-              "RelativeDocumentMoniker": "People\\frmListPeople.cs",
-              "ToolTip": "E:\\Learn\\Programming\\Programs\\GitHub Projects\\DVLD-WinForms\\DVLD\\People\\frmListPeople.cs",
-              "RelativeToolTip": "People\\frmListPeople.cs",
-              "ViewState": "AgIAABUAAAAAAAAAAAAAwCYAAAAfAAAAAAAAAA==",
+              "Title": "clsDataAccessSettings.cs",
+              "DocumentMoniker": "E:\\Learn\\Programming\\Programs\\GitHub Projects\\DVLD-WinForms\\DVLD-DataLayer\\clsDataAccessSettings.cs",
+              "RelativeDocumentMoniker": "..\\DVLD-DataLayer\\clsDataAccessSettings.cs",
+              "ToolTip": "E:\\Learn\\Programming\\Programs\\GitHub Projects\\DVLD-WinForms\\DVLD-DataLayer\\clsDataAccessSettings.cs",
+              "RelativeToolTip": "..\\DVLD-DataLayer\\clsDataAccessSettings.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAUAAAAdAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-06-29T00:51:08.151Z",
+              "WhenOpened": "2025-07-01T23:41:33.118Z",
               "EditorCaption": ""
             }
           ]
