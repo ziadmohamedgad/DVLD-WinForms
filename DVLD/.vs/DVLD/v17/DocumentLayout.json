@@ -3,7 +3,17 @@
   "WorkspaceRootPath": "E:\\Learn\\Programming\\Programs\\GitHub Projects\\DVLD-WinForms\\DVLD\\",
   "Documents": [
     {
+      "AbsoluteMoniker": "D:0:0:{20DC0548-C637-46AE-B923-ED8B56F612E8}|DVLD-PresentationLayer.csproj|e:\\learn\\programming\\programs\\github projects\\dvld-winforms\\dvld\\app.config||{FA3CD31E-987B-443A-9B81-186104E8DAC1}",
+      "RelativeMoniker": "D:0:0:{20DC0548-C637-46AE-B923-ED8B56F612E8}|DVLD-PresentationLayer.csproj|solutionrelative:app.config||{FA3CD31E-987B-443A-9B81-186104E8DAC1}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{E36FE165-9D1C-456E-8144-F4D8B4B22DCA}|..\\DVLD-DataLayer\\DVLD-DataLayer.csproj|e:\\learn\\programming\\programs\\github projects\\dvld-winforms\\dvld-datalayer\\clsuserdata.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
       "AbsoluteMoniker": "D:0:0:{E36FE165-9D1C-456E-8144-F4D8B4B22DCA}|..\\DVLD-DataLayer\\DVLD-DataLayer.csproj|e:\\learn\\programming\\programs\\github projects\\dvld-winforms\\dvld-datalayer\\clsdataaccesssettings.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|F:\\Dev\\VS\\C#\\ConsoleApp\\App.config||{FA3CD31E-987B-443A-9B81-186104E8DAC1}"
     }
   ],
   "DocumentGroupContainers": [
@@ -66,12 +76,49 @@
             {
               "$type": "Document",
               "DocumentIndex": 0,
+              "Title": "App.config",
+              "DocumentMoniker": "E:\\Learn\\Programming\\Programs\\GitHub Projects\\DVLD-WinForms\\DVLD\\App.config",
+              "RelativeDocumentMoniker": "App.config",
+              "ToolTip": "E:\\Learn\\Programming\\Programs\\GitHub Projects\\DVLD-WinForms\\DVLD\\App.config",
+              "RelativeToolTip": "App.config",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAYAAACNAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000601|",
+              "WhenOpened": "2025-07-05T20:07:50.317Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "clsUserData.cs",
+              "DocumentMoniker": "E:\\Learn\\Programming\\Programs\\GitHub Projects\\DVLD-WinForms\\DVLD-DataLayer\\clsUserData.cs",
+              "RelativeDocumentMoniker": "..\\DVLD-DataLayer\\clsUserData.cs",
+              "ToolTip": "E:\\Learn\\Programming\\Programs\\GitHub Projects\\DVLD-WinForms\\DVLD-DataLayer\\clsUserData.cs",
+              "RelativeToolTip": "..\\DVLD-DataLayer\\clsUserData.cs",
+              "ViewState": "AgIAACAAAAAAAAAAAAAAwAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-07-05T19:48:42.465Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "App.config",
+              "DocumentMoniker": "F:\\Dev\\VS\\C#\\ConsoleApp\\App.config",
+              "ToolTip": "F:\\Dev\\VS\\C#\\ConsoleApp\\App.config",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAUAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000601|",
+              "WhenOpened": "2025-07-05T19:46:20.977Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
               "Title": "clsDataAccessSettings.cs",
               "DocumentMoniker": "E:\\Learn\\Programming\\Programs\\GitHub Projects\\DVLD-WinForms\\DVLD-DataLayer\\clsDataAccessSettings.cs",
               "RelativeDocumentMoniker": "..\\DVLD-DataLayer\\clsDataAccessSettings.cs",
               "ToolTip": "E:\\Learn\\Programming\\Programs\\GitHub Projects\\DVLD-WinForms\\DVLD-DataLayer\\clsDataAccessSettings.cs",
               "RelativeToolTip": "..\\DVLD-DataLayer\\clsDataAccessSettings.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAgAAAAFAAAAAAAAAA==",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAcAAAB5AAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-07-01T23:41:33.118Z",
               "EditorCaption": ""
