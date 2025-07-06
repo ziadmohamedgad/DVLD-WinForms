@@ -59,7 +59,7 @@ namespace DVLD.Login
                 this.Hide();
                 Form frmMain = new frmMainScreen(this);
                 frmMain.ShowDialog();
-                IsPasswordHashed = false;
+                IsPasswordHashed = false; //user may login with another account.
             }
             else
             {

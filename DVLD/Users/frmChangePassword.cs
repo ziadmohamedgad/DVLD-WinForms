@@ -56,9 +56,10 @@ namespace DVLD.Users
             }
             string Salt = clsHash.GenerateRandomSalt();
             string HashedPassword = clsHash.ComputeHash(Salt + txtNewPassword.Text.Trim());
-            if (clsUser.ChangePassword(_UserID, HashedPassword, Salt))// edit this to store salt
+            _User.PasswordSalt = Salt;
+            _User.HashedPassword = HashedPassword;
+            if (clsUser.ChangePassword(_UserID, HashedPassword, Salt))
             {
-                _User.HashedPassword = HashedPassword;
                 MessageBox.Show("Password Changed Successfully.", "Saved", MessageBoxButtons.OK,
                     MessageBoxIcon.Information);
                 _ResetDefaultValues();
@@ -79,7 +80,7 @@ namespace DVLD.Users
             }
             else
                 errorProvider1.SetError(txtCurrentPassword, null);
-            if (clsHash.ComputeHash(clsUser.GetPasswordSaltByUserName(_User.UserName) + txtCurrentPassword.Text.Trim()) != _User.HashedPassword)
+            if (clsHash.ComputeHash(_User.PasswordSalt + txtCurrentPassword.Text.Trim()) != _User.HashedPassword)
             {
                 e.Cancel = true;
                 errorProvider1.SetError(txtCurrentPassword, "Current Password Is Wrong!");
@@ -98,7 +99,7 @@ namespace DVLD.Users
             else
                 errorProvider1.SetError(txtNewPassword, null);
             //validating if the user trying to add the same stored password, no need to change
-            if (clsHash.ComputeHash(clsUser.GetPasswordSaltByUserName(_User.UserName) + txtNewPassword.Text.Trim()) == _User.HashedPassword)
+            if (clsHash.ComputeHash(_User.PasswordSalt + txtNewPassword.Text.Trim()) == _User.HashedPassword)
             {
                 e.Cancel = true;
                 errorProvider1.SetError(txtNewPassword, "This is your current password already!");

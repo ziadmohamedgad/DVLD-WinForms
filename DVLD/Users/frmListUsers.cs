@@ -58,7 +58,7 @@ namespace DVLD.Users
         }
         private void editToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            Form frm = new frmAddUpdateUser((int)dgvUsers.CurrentRow.Cells[1].Value);
+            Form frm = new frmAddUpdateUser((int)dgvUsers.CurrentRow.Cells[0].Value);
             frm.ShowDialog();
             _RefreshUsersList();
         }
@@ -177,6 +177,7 @@ namespace DVLD.Users
         {
             Form frm = new frmShowUserInfo((int)dgvUsers.CurrentRow.Cells[0].Value);
             frm.ShowDialog();
+            frmListUsers_Load(null, null);
         }
         private void NotImplementedFeatures(object sender, EventArgs e)
         {

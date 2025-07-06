@@ -91,21 +91,8 @@ namespace DVLD.Users
             _User.IsActive = chkIsActive.Checked;
             string Salt = clsHash.GenerateRandomSalt();
             string HashedPassword = clsHash.ComputeHash(Salt + txtPassword.Text.Trim());
-            _User.Salt = Salt;
+            _User.PasswordSalt = Salt;
             _User.HashedPassword = HashedPassword;
-            if (_Mode == enMode.Update)
-            {
-                if (clsUser.ChangePassword(_UserID, HashedPassword, Salt))
-                {
-                    _User.Salt = Salt;
-                    _User.HashedPassword = HashedPassword;
-                }
-                else
-                {
-                    MessageBox.Show("Error Saving Data", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                    return;
-                }
-            }
             if (_User.Save())
             {
                 lblUserID.Text = _User.UserID.ToString();
@@ -140,7 +127,7 @@ namespace DVLD.Users
             else
                 errorProvider1.SetError(txtPassword, null);
             //validating if the user trying to add the same stored password, no need to change
-            if (_User != null && clsHash.ComputeHash(txtPassword.Text.Trim() + clsUser.GetPasswordSaltByUserName(_User.UserName)) == _User.HashedPassword)
+            if (_User != null && clsHash.ComputeHash(_User.PasswordSalt + txtPassword.Text.Trim()) == _User.HashedPassword)
             {
                 e.Cancel = true;
                 errorProvider1.SetError(txtPassword, "This is your current password already!");

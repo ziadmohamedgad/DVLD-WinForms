@@ -41,7 +41,7 @@ namespace DVLD_DataLayer
             }
             return RowsAffected > 0;
         }
-        public static bool UpdateUser(int UserID, int PersonID, string UserName, string HashedPassword, bool IsActive)
+        public static bool UpdateUser(int UserID, int PersonID, string UserName, string HashedPassword, bool IsActive, string PasswordSalt)
         {
             int RowsAffected = 0;
             SqlConnection Connection = new SqlConnection(clsDataAccessSettings.ConnectionString);
@@ -50,6 +50,7 @@ namespace DVLD_DataLayer
                                  UserName = @UserName, 
                                  HashedPassword = @HashedPassword, 
                                  IsActive = @IsActive,
+                                 PasswordSalt = @PasswordSalt 
                                  WHERE UserID = @UserID";
             SqlCommand Command = new SqlCommand(Query, Connection);
             Command.Parameters.AddWithValue("@PersonID", PersonID);
@@ -57,6 +58,7 @@ namespace DVLD_DataLayer
             Command.Parameters.AddWithValue("@HashedPassword", HashedPassword);
             Command.Parameters.AddWithValue("@IsActive", IsActive);
             Command.Parameters.AddWithValue("@UserID", UserID);
+            Command.Parameters.AddWithValue("@PasswordSalt", PasswordSalt);
             try
             {
                 Connection.Open();
@@ -111,7 +113,7 @@ namespace DVLD_DataLayer
             return UserID;
         }
         public static bool GetUserInfoByPersonID(int PersonID, ref int UserID, ref string UserName,
-            ref string HashedPassword, ref bool IsActive)
+            ref string HashedPassword, ref bool IsActive, ref string PasswordSalt)
         {
             bool IsFound = false;
             SqlConnection Connection = new SqlConnection(clsDataAccessSettings.ConnectionString);
@@ -130,6 +132,7 @@ namespace DVLD_DataLayer
                     UserName = (string)Reader["UserName"];
                     HashedPassword = (string)Reader["HashedPassword"];
                     IsActive = (bool)Reader["IsActive"];
+                    PasswordSalt = (string)Reader["PasswordSalt"];
                 }
                 else
                     IsFound = false;
@@ -148,7 +151,7 @@ namespace DVLD_DataLayer
             return IsFound;
         }
         public static bool GetUserInfoByUserID(int UserID, ref int PersonID, ref string UserName,
-            ref string HashedPassword, ref bool IsActive)
+            ref string HashedPassword, ref bool IsActive, ref string PasswordSalt)
         {
             bool IsFound = false;
             SqlConnection Connection = new SqlConnection(clsDataAccessSettings.ConnectionString);
@@ -167,6 +170,7 @@ namespace DVLD_DataLayer
                     UserName = (string)Reader["UserName"];
                     HashedPassword = (string)Reader["HashedPassword"];
                     IsActive = (bool)Reader["IsActive"];
+                    PasswordSalt = (string)Reader["PasswordSalt"];
                 }
                 else
                     IsFound = false;
@@ -185,7 +189,7 @@ namespace DVLD_DataLayer
             return IsFound;
         }
         public static bool GetUserInfoByUserNameAndHashedPassword(string UserName, string HashedPassword,
-            ref int UserID, ref int PersonID, ref bool IsActive)
+            ref int UserID, ref int PersonID, ref bool IsActive, ref string PasswordSalt)
         {
             bool IsFound = false;
             SqlConnection Connection = new SqlConnection(clsDataAccessSettings.ConnectionString);
@@ -205,6 +209,7 @@ namespace DVLD_DataLayer
                     UserName = (string)Reader["UserName"];
                     HashedPassword = (string)Reader["HashedPassword"];
                     IsActive = (bool)Reader["IsActive"];
+                    PasswordSalt = (string)Reader["PasswordSalt"];
                 }
                 else
                     IsFound = false;
@@ -330,7 +335,7 @@ namespace DVLD_DataLayer
             }
             return IsFound;
         }
-        public static bool ChangePassword(int UserID, string HashedPassword, string PasswordSalt) // here we'll add the salt
+        public static bool ChangePassword(int UserID, string HashedPassword, string PasswordSalt)
         {
             int RowsAffected = 0;
             SqlConnection Connection = new SqlConnection(clsDataAccessSettings.ConnectionString);
