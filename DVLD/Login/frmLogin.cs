@@ -11,23 +11,36 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-
+using DVLD_Hash;
 namespace DVLD.Login
 {
     public partial class frmLogin : Form
     {
+        private bool IsPasswordHashed = false;
         public frmLogin()
         {
             InitializeComponent();
         }
         private void btnLogin_Click(object sender, EventArgs e)
         {
-            clsUser User = clsUser.FindByUsernameAndPassword(txtUserName.Text.Trim(), txtPassword.Text.Trim());
+            clsUser User = new clsUser();
+            string HashedPassword = null;
+            if (IsPasswordHashed)
+            {
+                HashedPassword = txtPassword.Text.Trim();
+                User = clsUser.FindByUsernameAndHashedPassword(txtUserName.Text.Trim(), HashedPassword);
+            }
+            else
+            {
+                string Salt = clsUser.GetPasswordSaltByUserName(txtUserName.Text.Trim());
+                HashedPassword = clsHash.ComputeHash(Salt + txtPassword.Text.Trim());
+                User = clsUser.FindByUsernameAndHashedPassword(txtUserName.Text.Trim(), HashedPassword);
+            }
             if (User != null)
             {
                 if (chkRemeberMe.Checked)
                 {
-                    clsRegLogger.RememberUsernameAndPassword(txtUserName.Text.Trim(), txtPassword.Text.Trim());
+                    clsRegLogger.RememberUsernameAndPassword(txtUserName.Text.Trim(), HashedPassword);
                 }
                 else
                 {
@@ -46,10 +59,11 @@ namespace DVLD.Login
                 this.Hide();
                 Form frmMain = new frmMainScreen(this);
                 frmMain.ShowDialog();
+                IsPasswordHashed = false;
             }
             else
             {
-                txtUserName.Focus();
+                txtPassword.Focus();
                 MessageBox.Show("Invalid Username/Password.", "Wrong Credentials", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
@@ -59,15 +73,20 @@ namespace DVLD.Login
         }
         private void frmLogin_Load(object sender, EventArgs e)
         {
-            string Username = "", Password = "";
-            if (clsRegLogger.GetStoredCredentilas(ref Username, ref Password))
+            string Username = "", HashedPassword = "";
+            if (clsRegLogger.GetStoredCredentilas(ref Username, ref HashedPassword))
             {
                 txtUserName.Text = Username;
-                txtPassword.Text = Password;
+                txtPassword.Text = HashedPassword;
                 chkRemeberMe.Checked = true;
+                IsPasswordHashed = true;
             }
             else
                 chkRemeberMe.Checked = false;
+        }
+        private void txtPassword_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            IsPasswordHashed = false; //user decided to insert a new password.
         }
     }
 }

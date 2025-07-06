@@ -1,5 +1,6 @@
 ﻿using DVLD.People.Conrols;
 using DVLD_BusinessLayer;
+using DVLD_Hash;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -65,8 +66,8 @@ namespace DVLD.Users
             ctrlPersonCardWithFilter1.FilterEnabled = false;
             lblUserID.Text = _User.UserID.ToString();
             txtUserName.Text = _User.UserName;
-            txtPassword.Text = _User.Password;
-            txtConfirmPassword.Text = _User.Password;
+            txtPassword.Text = _User.HashedPassword;
+            txtConfirmPassword.Text = _User.HashedPassword;
             chkIsActive.Checked = _User.IsActive;
             ctrlPersonCardWithFilter1.LoadPersonInfo(_User.PersonID);
         }
@@ -87,8 +88,24 @@ namespace DVLD.Users
             }
             _User.PersonID = ctrlPersonCardWithFilter1.PersonID;
             _User.UserName = txtUserName.Text.Trim();
-            _User.Password = txtPassword.Text.Trim();
             _User.IsActive = chkIsActive.Checked;
+            string Salt = clsHash.GenerateRandomSalt();
+            string HashedPassword = clsHash.ComputeHash(Salt + txtPassword.Text.Trim());
+            _User.Salt = Salt;
+            _User.HashedPassword = HashedPassword;
+            if (_Mode == enMode.Update)
+            {
+                if (clsUser.ChangePassword(_UserID, HashedPassword, Salt))
+                {
+                    _User.Salt = Salt;
+                    _User.HashedPassword = HashedPassword;
+                }
+                else
+                {
+                    MessageBox.Show("Error Saving Data", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    return;
+                }
+            }
             if (_User.Save())
             {
                 lblUserID.Text = _User.UserID.ToString();
@@ -119,6 +136,14 @@ namespace DVLD.Users
             {
                 e.Cancel = true;
                 errorProvider1.SetError(txtPassword, "Password Cannot Be Blank!");
+            }
+            else
+                errorProvider1.SetError(txtPassword, null);
+            //validating if the user trying to add the same stored password, no need to change
+            if (_User != null && clsHash.ComputeHash(txtPassword.Text.Trim() + clsUser.GetPasswordSaltByUserName(_User.UserName)) == _User.HashedPassword)
+            {
+                e.Cancel = true;
+                errorProvider1.SetError(txtPassword, "This is your current password already!");
             }
             else
                 errorProvider1.SetError(txtPassword, null);

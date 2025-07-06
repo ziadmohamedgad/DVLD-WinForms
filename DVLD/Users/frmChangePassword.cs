@@ -1,4 +1,5 @@
 ﻿using DVLD_BusinessLayer;
+using DVLD_Hash;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -41,7 +42,6 @@ namespace DVLD.Users
             }
             ctrlUserCard1.LoadUserInfo(_UserID);
         }
-
         private void btnClose_Click(object sender, EventArgs e)
         {
             this.Close();
@@ -54,9 +54,11 @@ namespace DVLD.Users
                     "Validation Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return;
             }
-            _User.Password = txtNewPassword.Text;
-            if (_User.Save()) // HERE WE CAN USE clsUser.ChangePassword(_User.UserID, _User.Password) JUSET CHECK THE DATA LAYER TO DETERMINE
+            string Salt = clsHash.GenerateRandomSalt();
+            string HashedPassword = clsHash.ComputeHash(Salt + txtNewPassword.Text.Trim());
+            if (clsUser.ChangePassword(_UserID, HashedPassword, Salt))// edit this to store salt
             {
+                _User.HashedPassword = HashedPassword;
                 MessageBox.Show("Password Changed Successfully.", "Saved", MessageBoxButtons.OK,
                     MessageBoxIcon.Information);
                 _ResetDefaultValues();
@@ -77,7 +79,7 @@ namespace DVLD.Users
             }
             else
                 errorProvider1.SetError(txtCurrentPassword, null);
-            if (txtCurrentPassword.Text.Trim() != _User.Password)
+            if (clsHash.ComputeHash(clsUser.GetPasswordSaltByUserName(_User.UserName) + txtCurrentPassword.Text.Trim()) != _User.HashedPassword)
             {
                 e.Cancel = true;
                 errorProvider1.SetError(txtCurrentPassword, "Current Password Is Wrong!");
@@ -91,6 +93,15 @@ namespace DVLD.Users
             {
                 e.Cancel = true;
                 errorProvider1.SetError(txtNewPassword, "New Password Cannot Be Blank!");
+                return;
+            }
+            else
+                errorProvider1.SetError(txtNewPassword, null);
+            //validating if the user trying to add the same stored password, no need to change
+            if (clsHash.ComputeHash(clsUser.GetPasswordSaltByUserName(_User.UserName) + txtNewPassword.Text.Trim()) == _User.HashedPassword)
+            {
+                e.Cancel = true;
+                errorProvider1.SetError(txtNewPassword, "This is your current password already!");
             }
             else
                 errorProvider1.SetError(txtNewPassword, null);
