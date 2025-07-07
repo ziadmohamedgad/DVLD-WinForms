@@ -77,17 +77,6 @@ To restore:
 
 ---
 
-## 🧪 Sample License Classes
-
-| Class | Description              | Min Age | Validity | Fee   |
-|-------|--------------------------|---------|----------|-------|
-| 1     | Light Motorcycles        | 18      | 5 Years  | $15   |
-| 3     | Private Cars             | 18      | 10 Years | $20   |
-| 4     | Commercial Vehicles      | 21      | 10 Years | $200  |
-| 7     | Heavy Trucks / Buses     | 21      | 10 Years | $300  |
-
----
-
 ## 📌 Notes
 
 - A person can hold multiple licenses of different classes, but not multiple of the same.
