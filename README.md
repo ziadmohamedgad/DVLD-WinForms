@@ -74,7 +74,7 @@ To restore:
 3. Open `DVLD.sln` in Visual Studio
 4. Update `App.config` with your DB connection string
 5. Build and run
-
+6. Sign in using username: Ziad, Password: 1234 (any Password is 1234).
 ---
 
 ## 📌 Notes
