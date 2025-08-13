@@ -49,6 +49,7 @@ namespace DVLD.Users
         {
             Form frm = new frmShowUserInfo((int)dgvUsers.CurrentRow.Cells[0].Value);
             frm.ShowDialog();
+            _RefreshUsersList();
         }
         private void btnAddUser_Click(object sender, EventArgs e)
         {

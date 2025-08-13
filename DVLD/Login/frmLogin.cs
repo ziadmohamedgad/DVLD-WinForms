@@ -33,7 +33,7 @@ namespace DVLD.Login
             else
             {
                 string Salt = clsUser.GetPasswordSaltByUserName(txtUserName.Text.Trim());
-                HashedPassword = clsHash.ComputeHash(Salt + txtPassword.Text.Trim());
+                HashedPassword = clsSecurity.ComputeHash(Salt + txtPassword.Text.Trim());
                 User = clsUser.FindByUsernameAndHashedPassword(txtUserName.Text.Trim(), HashedPassword);
             }
             if (User != null)

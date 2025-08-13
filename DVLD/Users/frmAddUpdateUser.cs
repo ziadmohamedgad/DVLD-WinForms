@@ -89,8 +89,8 @@ namespace DVLD.Users
             _User.PersonID = ctrlPersonCardWithFilter1.PersonID;
             _User.UserName = txtUserName.Text.Trim();
             _User.IsActive = chkIsActive.Checked;
-            string Salt = clsHash.GenerateRandomSalt();
-            string HashedPassword = clsHash.ComputeHash(Salt + txtPassword.Text.Trim());
+            string Salt = clsSecurity.GenerateRandomSalt();
+            string HashedPassword = clsSecurity.ComputeHash(Salt + txtPassword.Text.Trim());
             _User.PasswordSalt = Salt;
             _User.HashedPassword = HashedPassword;
             if (_User.Save())
@@ -127,7 +127,7 @@ namespace DVLD.Users
             else
                 errorProvider1.SetError(txtPassword, null);
             //validating if the user trying to add the same stored password, no need to change
-            if (_User != null && clsHash.ComputeHash(_User.PasswordSalt + txtPassword.Text.Trim()) == _User.HashedPassword)
+            if (_User != null && clsSecurity.ComputeHash(_User.PasswordSalt + txtPassword.Text.Trim()) == _User.HashedPassword)
             {
                 e.Cancel = true;
                 errorProvider1.SetError(txtPassword, "This is your current password already!");

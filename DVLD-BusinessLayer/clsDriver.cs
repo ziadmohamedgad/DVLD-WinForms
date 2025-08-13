@@ -13,7 +13,7 @@ namespace DVLD_BusinessLayer
         public enum enMode { AddNew = 0, Update = 1 }
         public enMode Mode = enMode.AddNew;
         public int DriverID { set; get; }
-        public int PersonID { set; get; }
+        public int PersonID { set; get; } 
         public int CreatedByUserID { set; get; }
         public DateTime CreatedDate { set; get; }
         public clsPerson PersonInfo;

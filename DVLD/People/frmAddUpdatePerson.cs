@@ -78,7 +78,6 @@ namespace DVLD.People
                 this.Close();
                 return;
             }
-            //lblTitle.Text = "Update Person";
             lblPersonID.Text = _Person.PersonID.ToString();
             txtFirstName.Text = _Person.FirstName;
             txtSecondName.Text = _Person.SecondName;

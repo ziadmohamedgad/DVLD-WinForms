@@ -57,7 +57,6 @@ namespace DVLD.People.Conrols
         }
         private void _FillPersonInfo()
         {
-            _PersonID = _Person.PersonID;
             llEditPersonInfo.Visible = true;
             _PersonID = _Person.PersonID;
             lblPersonID.Text = _Person.PersonID.ToString();

@@ -1,0 +1,23 @@
+# Ignore build results
+bin/
+obj/
+
+# Ignore Visual Studio files
+.vs/
+*.user
+*.suo
+*.vsidx
+*.VC.db
+*.opendb
+*.db-shm
+*.db-wal
+CopilotIndices/
+
+# For all sub-projects too
+**/bin/
+**/obj/
+**/.vs/
+**/*.user
+**/*.suo
+**/*.vsidx
+**/CopilotIndices/

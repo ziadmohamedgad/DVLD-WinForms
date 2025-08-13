@@ -6,7 +6,7 @@ using System.Text;
 using System.Threading.Tasks;
 namespace DVLD_Hash
 {
-    public class clsHash
+    public class clsSecurity
     {
         public static string GenerateRandomSalt(int size = 16) //if you changed the default value (16), you have to be concern about the column capacity of chars at database file.
         {
