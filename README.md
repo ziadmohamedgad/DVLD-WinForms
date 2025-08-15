@@ -85,6 +85,6 @@ To restore:
 
 ---
 
-## 📁 License
+## 📄 License
 
 This project is provided for educational purposes only.
