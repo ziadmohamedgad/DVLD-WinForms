@@ -85,6 +85,37 @@ To restore:
 
 ---
 
-## 📄 License
+## 📁 License
 
 This project is provided for educational purposes only.
+
+---
+
+## 📸 Screenshots
+ 
+Here’s an example of the Login screen:
+
+![Login Screen](Repo-Images/LoginScreen.jpg)
+ 
+Here’s an example of the Main screen:
+
+![Main Screen](Repo-Images/MainScreen.jpg)
+ 
+Here’s an example of the List screen:
+
+![List Screen](Repo-Images/ListScreen.jpg)
+ 
+Here’s an example of the App New Application Sample screen:
+
+![Add New Application Screen](Repo-Images/AddNewApplicationSampleScreen.jpg)
+ 
+Here’s an example of the Renew License Screen screen:
+
+![Renew License Screen](Repo-Images/RenewLicenseScreen.jpg)
+ 
+Here’s an example of the Release Detained License screen:
+
+![Release Detained License Screen](Repo-Images/ReleaseDetainedLicenseScreen.jpg)
+
+
+
