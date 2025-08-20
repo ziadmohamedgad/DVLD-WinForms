@@ -103,13 +103,13 @@ Here’s an example of the Main screen:
  
 Here’s an example of the List screen:
 
-![List Screen](Repo-Images/ListScreen.jpg)
+![List Screen](Repo-Images/ListScreenSample.jpg)
  
 Here’s an example of the App New Application Sample screen:
 
 ![Add New Application Screen](Repo-Images/AddNewApplicationSampleScreen.jpg)
  
-Here’s an example of the Renew License Screen screen:
+Here’s an example of the Renew License screen:
 
 ![Renew License Screen](Repo-Images/RenewLicenseScreen.jpg)
  
